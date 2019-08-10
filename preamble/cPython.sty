@@ -1,0 +1,32 @@
+\ProvidesPackage{cPython}
+
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+\definecolor{lstKeyword}{HTML}{000080}
+\definecolor{lstBG}{HTML}{FFFFFF}
+\definecolor{lstString}{HTML}{008000}
+\definecolor{lstNumber}{HTML}{0000FF}
+\definecolor{lstComment}{HTML}{808080}
+\definecolor{lstLineNumber}{HTML}{999999}
+\lstdefinestyle{cPython}{
+    backgroundcolor=\color{lstBG},
+    commentstyle=\color{lstComment},
+    keywordstyle=\color{lstKeyword},
+    numberstyle=\tiny\color{lstLineNumber},
+    stringstyle=\color{lstString},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,        
+    breaklines=false,               
+    captionpos=b,                    
+    keepspaces=true,              
+    numbers=left,        
+    numbersep=5pt,          
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false, 
+    tabsize=4
+}   
+
+
