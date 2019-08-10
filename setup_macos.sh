@@ -4,8 +4,11 @@ if [ ! -f ~/.vim/autoload/plug.vim ]; then
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 mkdir -p ~/Library/texmf/tex
+rm -f ~/Library/texmf/tex/latex
 ln -s $CURDIR/preamble ~/Library/texmf/tex/latex
 mkdir -p ~/.vim/
+rm -f ~/.vim/UltiSnips
 ln -s $CURDIR/snips/main ~/.vim/UltiSnips
-ln -s $CURDIR vimrc ~/.vimrc
+rm -f ~/.vimrc
+ln -s $CURDIR/vimrc ~/.vimrc
 vim +PlugInstall +qall
