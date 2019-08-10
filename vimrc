@@ -20,6 +20,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 call plug#end()
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 :color elflord
 :hi Conceal ctermbg=NONE ctermfg=5
