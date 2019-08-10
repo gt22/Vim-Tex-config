@@ -17,7 +17,6 @@ Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 call plug#end()
 
 set tabstop=4
@@ -27,3 +26,4 @@ set expandtab
 
 :color elflord
 :hi Conceal ctermbg=NONE ctermfg=5
+set rtp+=~/.vim_snips/$CUR_VIM_SNIPS,~/.vim_snips/main

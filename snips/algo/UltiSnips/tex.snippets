@@ -1,0 +1,23 @@
+
+
+
+snippet lst "lising" bA
+\begin{lstlisting}[language=$1]
+	$0
+\end{lstlisting}
+endsnippet
+
+snippet py "python lising" bA
+\begin{lstlisting}[language=python]
+	$0
+\end{lstlisting}
+endsnippet
+
+snippet pyf "python file" bA
+\lstinputlisting[language=python]{$1}$0
+endsnippet
+
+snippet ppyf "partial python file" bA
+\lstinputlisting[language=python, firstline=$2, lastline=$3]{$1}$0
+endsnippet
+
