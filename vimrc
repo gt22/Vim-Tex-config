@@ -23,6 +23,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set autoread
 
 :color elflord
 :hi Conceal ctermbg=NONE ctermfg=5
