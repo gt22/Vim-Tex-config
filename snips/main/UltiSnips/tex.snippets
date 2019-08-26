@@ -24,7 +24,7 @@ snippet startdoc "Basic template" bA
 \usepackage{cRussian}
 \usepackage{cPicture}
 %\usepackage{cFonts}
-
+%\usepackage{cTikz}
 \title{$1}
 \author{Igor Engel}
 \date{}
@@ -71,6 +71,9 @@ snippet beg "begin{} / end{}" bA
 \\end{$1}
 endsnippet
 
+snippet tbf "textbf" A
+\\textbf{${1:${VISUAL}}}$0
+endsnippet
 priority 100
 snippet ... "ldots" iA
 \ldots
@@ -483,7 +486,7 @@ snippet dint "integral" wA
 \int\limits_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
 endsnippet
 
-priority 200
+priority 1000
 context "math()"
 snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|argmin|argmax|pi|zeta|int)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
@@ -549,7 +552,7 @@ endsnippet
 
 
 context "math()"
-snippet cc "subset" Ai
+snippet cc "subset" A
 \subset 
 endsnippet
 
