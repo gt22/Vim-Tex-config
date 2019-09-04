@@ -27,4 +27,9 @@ set autoread
 
 :color elflord
 :hi Conceal ctermbg=NONE ctermfg=5
+let fname = expand('%:p:h')
+if fname =~ '\vhse/(courses|homework)'
+    let $VIM_TMP_PATH=fname
+endif
+let $CUR_VIM_SNIPS='algebra'
 set rtp+=~/.vim_snips/$CUR_VIM_SNIPS,~/.vim_snips/main
