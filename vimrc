@@ -31,5 +31,4 @@ let fname = expand('%:p:h')
 if fname =~ '\vhse/(courses|homework)'
     let $VIM_TMP_PATH=fname
 endif
-let $CUR_VIM_SNIPS='algebra'
 set rtp+=~/.vim_snips/$CUR_VIM_SNIPS,~/.vim_snips/main

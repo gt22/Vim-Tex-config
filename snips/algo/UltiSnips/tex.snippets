@@ -1,23 +1,44 @@
 
+global !p
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
 
+texIgnoreMathZones = ['texMathText']
 
-snippet lst "lising" bA
-\begin{lstlisting}[language=$1]
-	$0
-\end{lstlisting}
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
+context "math()"
+snippet OO "O-big" iA
+\mathcal{O}\left( $1\right)$0
 endsnippet
 
-snippet py "python lising" bA
-\begin{lstlisting}[language=python]
-	$0
-\end{lstlisting}
+context "math()"
+snippet Oo "o-small" iA
+o\left( $1\right)$0
 endsnippet
 
-snippet pyf "python file" bA
-\lstinputlisting[language=python]{$1}$0
+context "math()"
+snippet OT "Theta" iA
+\Theta\left( $1\right)$0
 endsnippet
 
-snippet ppyf "partial python file" bA
-\lstinputlisting[language=python, firstline=$2, lastline=$3]{$1}$0
+context "math()"
+snippet OM "Omega-big" iA
+\Omega\left( $1\right)$0
 endsnippet
 
+context "math()"
+snippet Om "omega-small" iA
+\omega\left( $1\right)$0
+endsnippet

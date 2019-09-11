@@ -301,7 +301,7 @@ snippet conj "conjugate" iA
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{i=${1:1}}^{${2:\infty}}
 endsnippet
 
 snippet taylor "taylor" w
@@ -353,7 +353,7 @@ snippet __ "subscript" iA
 _{$1}$0
 endsnippet
 
-snippet ooo "\infty" iA
+snippet 8o8 "\infty" iA
 \infty
 endsnippet
 
@@ -493,6 +493,10 @@ snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|argmin|argmax|pi|zeta
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
+context "math()"
+snippet \- "setminus" iA
+\setminus
+endsnippet
 
 priority 100
 context "math()"
@@ -567,12 +571,18 @@ endsnippet
 
 context "math()"
 snippet union "cap" iA
+\cup 
+endsnippet
+
+
+# \inter becouse 'in' would be converted to '\in' before this snippet could trigger
+context "math()"
+snippet \inter "cup" iA
 \cap 
 endsnippet
 
-context "math()"
-snippet inter "cup" iA
-\cup 
+snippet b\inom "binom" iA
+\binom
 endsnippet
 
 context "math()"
@@ -586,20 +596,8 @@ snippet Union "bigcap" iA
 endsnippet
 
 context "math()"
-snippet OO "emptyset" iA
+snippet oo "emptyset" iA
 \emptyset
-endsnippet
-
-snippet RR "real" iA
-\mathbb{R}
-endsnippet
-
-snippet QQ "Q" iA
-\mathbb{Q}
-endsnippet
-
-snippet ZZ "Z" iA
-\mathbb{Z}
 endsnippet
 
 snippet <! "normal" iA
