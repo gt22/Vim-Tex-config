@@ -1,10 +1,12 @@
 \ProvidesPackage{cTheorem}
 \usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}[section]
+\theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[section]
 \newtheorem{tlemma}{Лемма}[theorem]
 \newtheorem{dlemma}{Лемма}[definition]
-
-\theoremstyle{definition}
-\newtheorem{definition}{Определение}[section]
+\newtheorem{example}{Пример}[section]
+\newtheorem{problem}{Задача}[section]
 
 \newcommand{\ssep}{\mid}

@@ -38,10 +38,26 @@ endsnippet
 snippet tlemma "Theorem lemma" bA
 \\begin{tlemma}
 	$0
-\end{tlemma}
+\\end{tlemma}
+endsnippet
+
+snippet exmp "Example" bA
+\\begin{example}
+	$0
+\\end{example}
+endsnippet
+
+snippet prbl "Problem" bA
+\\begin{problem}
+	$0
+\\end{problem}
 endsnippet
 
 context "math()"
 snippet fall "forall" wA
-\\forall{$1}$0
+\\forall{$1}\quad $0
+endsnippet
+context "math()"
+snippet exts "exists" wA
+\\exists{$1}\quad $0
 endsnippet
