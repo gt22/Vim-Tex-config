@@ -17,6 +17,8 @@ Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+Plug 'isobit/vim-darcula-colors'
 call plug#end()
 
 set tabstop=4
@@ -24,8 +26,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoread
+set nu
 
-:color elflord
+:color darcula
 :hi Conceal ctermbg=NONE ctermfg=5
 let fname = expand('%:p:h')
 if fname =~ '\vhse/(courses|homework)'

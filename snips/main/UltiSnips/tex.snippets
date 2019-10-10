@@ -314,7 +314,7 @@ snippet taylor "taylor" w
 endsnippet
 
 snippet lim "limit" w
-\lim_{${1:n} \to ${2:\infty}} 
+\lim\limits_{${1:n} \to ${2:\infty}} 
 endsnippet
 
 snippet limsup "limsup" w
@@ -535,10 +535,12 @@ snippet \\\ "setminus" iA
 \setminus
 endsnippet
 
+context "math()"
 snippet >> ">>" iA
 \gg
 endsnippet
 
+context "math()"
 snippet << "<<" iA
 \ll
 endsnippet
@@ -601,7 +603,7 @@ snippet Union "bigcup" iA
 endsnippet
 
 context "math()"
-snippet oo "emptyset" iA
+snippet oo "emptyset" A
 \emptyset
 endsnippet
 
@@ -694,6 +696,28 @@ endsnippet
 
 snippet DD "D" iA
 \mathbb{D}
+endsnippet
+
+context "math()"
+snippet eps "epsilon" iA
+\varepsilon
+endsnippet
+
+context "math()"
+snippet "([^\\r])phi" "phi" riA
+`!p snip.rv = match.group(1) + "\\varphi"`
+endsnippet
+
+priority 10
+context "math()"
+snippet "wave" "tilde" riA
+\tilde{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])wave" "wave" riA
+\tilde{`!p snip.rv=match.group(1)`}
 endsnippet
 
 # vim:ft=snippets
