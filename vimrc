@@ -27,9 +27,11 @@ set shiftwidth=4
 set expandtab
 set autoread
 set nu
-
+set backspace=indent,eol,start
 :color darcula
-:hi Conceal ctermbg=NONE ctermfg=5
+:hi! link Conceal texMath
+:hi Todo ctermbg=233 ctermfg=11
+:call matchadd('Conceal','\\limits',10,-1,{'conceal': ''})
 let fname = expand('%:p:h')
 if fname =~ '\vhse/(courses|homework)'
     let $VIM_TMP_PATH=fname
