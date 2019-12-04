@@ -350,7 +350,7 @@ snippet td "to the ... power" iA
 endsnippet
 
 context "math()"
-snippet rd "to the ... power" iA
+snippet trd "to the ... power" iA
 ^{($1)}$0
 endsnippet
 
@@ -720,4 +720,63 @@ snippet "([a-zA-Z])wave" "wave" riA
 \tilde{`!p snip.rv=match.group(1)`}
 endsnippet
 
+snippet def "definition" bA
+\\begin{definition}
+	$0
+\\end{definition}
+endsnippet
+
+snippet thm "theorem" bA
+\\begin{theorem}[$1]
+	$0
+\\end{theorem}
+endsnippet
+
+snippet dlemma "Definition lemma" bA
+\\begin{dlemma}
+	$0
+\\end{dlemma}
+endsnippet
+
+snippet tlemma "Theorem lemma" bA
+\\begin{tlemma}
+	$0
+\\end{tlemma}
+endsnippet
+
+snippet exmp "Example" bA
+\\begin{example}
+	$0
+\\end{example}
+endsnippet
+
+snippet prbl "Problem" bA
+\\begin{problem}
+	$0
+\\end{problem}
+endsnippet
+
+context "math()"
+snippet fall "forall" wA
+\\forall{$1}\quad $0
+endsnippet
+
+context "math()"
+snippet exts "exists" wA
+\\exists{$1}\quad $0
+endsnippet
+
+snippet eqtn "equation" bA
+\\begin{equation}
+	$0
+\\end{equation}
+endsnippet
+
+snippet split "split" bA
+\\begin{equation}
+	\\begin{split}
+		$0
+	\\end{split}
+\\end{equation}
+endsnippet
 # vim:ft=snippets
