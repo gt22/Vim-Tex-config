@@ -5,4 +5,19 @@
 \newcommand*{\ndivby}{\centernot\divby}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Stab}{Stab}
 \newcommand{\actson}{\curvearrowright}
+\catcode`@=11
+\def\caseswithdelim#1#2{\left#1\,\vcenter{\normalbaselines\m@th
+  \ialign{\strut$##\hfil$&\quad##\hfil\crcr#2\crcr}}\right.}% you might like it without the \strut
+\catcode`@=12
+%
+\def\bcases#1{\caseswithdelim[{#1}}
+\def\vcases#1{\caseswithdelim|{#1}}
+%
