@@ -2,9 +2,14 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'lervag/vimtex'
 
+
+
 let g:tex_flavor='latex'
 let g:vimtex_view_method='skim'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_compiler_latexmk = {
+            \ 'build_dir' : '/Users/gt22/Documents/workspace/tex/builds' . substitute(getcwd(), '/Users/gt22/Documents/workspace/tex', '', '')
+            \}
 
 Plug 'KeitaNakamura/tex-conceal.vim'
 set conceallevel=2

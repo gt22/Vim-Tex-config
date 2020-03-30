@@ -12,6 +12,14 @@
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\Ima}{Im}
 \DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\outdeg}{outdeg}
+\DeclareMathOperator{\indeg}{indeg}
+\let\Im\relax % Переопределяем стрёмные значки для понятных вещей.
+\let\Re\relax
+\DeclareMathOperator\Im{Im}
+\DeclareMathOperator\Re{Re}
+\DeclareMathOperator\id{id}
 \newcommand{\actson}{\curvearrowright}
 \catcode`@=11
 \def\caseswithdelim#1#2{\left#1\,\vcenter{\normalbaselines\m@th
@@ -21,3 +29,13 @@
 \def\bcases#1{\caseswithdelim[{#1}}
 \def\vcases#1{\caseswithdelim|{#1}}
 %
+\newenvironment{apmatrix}[1]{%
+    \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\newenvironment{abmatrix}[2][1]{%
+    \left[\begin{array}{@{}*{#1}{c}|*{#2}{c}@{}}
+}{%
+  \end{array}\right]
+}

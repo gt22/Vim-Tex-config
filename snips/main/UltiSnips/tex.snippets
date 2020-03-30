@@ -25,10 +25,20 @@ snippet startdoc "Basic template" bA
 \usepackage{cRussian}
 \usepackage{cPicture}
 \usepackage{cTheorem}
+\usepackage{cmap}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{polyglossia}
 %\usepackage{cTikz}
 \title{$1}
 \author{Igor Engel}
 \date{}
+\setdefaultlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
+\setmainfont[Ligatures={TeX,Historic}]{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newcommand\Section{\section}
 
 \begin{document}
 \maketitle
@@ -52,17 +62,17 @@ snippet usssec "unnumbered subsubsection" bA
 endsnippet
 
 snippet sec "section" bA
-\\section{$1}
+\\Section{$1}{Игорь Энгель}
 	$0
 endsnippet
 
 snippet ssec "subsection" bA
-\\subsection{$1}
+\\Subsection{$1}
 	$0
 endsnippet
 
 snippet sssec "subsubsection" bA
-\\subsubsection{$1}
+\\Subsubsection{$1}
 	$0
 endsnippet
 
@@ -259,12 +269,19 @@ snippet floor "floor" iA
 \left\lfloor $1 \right\rfloor$0
 endsnippet
 
+context "math()"
 snippet pmat "pmat" iA
 \begin{pmatrix} $1 \end{pmatrix} $0
 endsnippet
 
+context "math()"
 snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
+endsnippet
+
+context "math()"
+snippet amat "augmented bmat" iA
+\begin{abmatrix}{$1} $2 \end{abmatrix} $0
 endsnippet
 
 context "math()"
@@ -611,14 +628,17 @@ snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
+context "math()"
 snippet <> "hokje" iA
 \left<$1\right>$0
 endsnippet
 
+context "math()"
 snippet [] "brackets" iA
 \left[$1\right]$0
 endsnippet
 
+context "math()"
 snippet [) "Half interval" iA
 \left[$1; $2\right)$0
 endsnippet
@@ -699,13 +719,8 @@ snippet DD "D" iA
 endsnippet
 
 context "math()"
-snippet eps "epsilon" iA
-\varepsilon
-endsnippet
-
-context "math()"
-snippet "([^\\r])phi" "phi" riA
-`!p snip.rv = match.group(1) + "\\varphi"`
+snippet "([^\\r])(alpha|beta|gamma|delta|eps|zeta|theta|lambda|pi|rho|sigma|tau|phi|psi)" "greek" riA
+`!p snip.rv = match.group(1) + "\\" + match.group(2)`
 endsnippet
 
 priority 10
@@ -720,40 +735,82 @@ snippet "([a-zA-Z])wave" "wave" riA
 \tilde{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet def "definition" bA
-\\begin{definition}
-	$0
+snippet def "Definition" bA
+\\begin{definition} \thmslashn 
+
+$0
 \\end{definition}
 endsnippet
 
-snippet thm "theorem" bA
-\\begin{theorem}[$1]
+snippet thm "Theorem" bA
+\\begin{theorem} \thmslashn
+
 	$0
 \\end{theorem}
 endsnippet
 
-snippet dlemma "Definition lemma" bA
-\\begin{dlemma}
+snippet lemma "Lemma" bA
+\\begin{lemma} \thmslashn
+
 	$0
-\\end{dlemma}
+\\end{lemma}
 endsnippet
 
-snippet tlemma "Theorem lemma" bA
-\\begin{tlemma}
+snippet stmt "Statement" bA
+\\begin{statement} \thmslashn
+
 	$0
-\\end{tlemma}
+\\end{statement}
+endsnippet
+
+snippet rema "Remark" bA
+\\begin{remark} \thmslashn
+
+	$0
+\\end{remark}
+endsnippet
+
+
+snippet cons "Consequence" bA
+\\begin{consequence} \thmslashn
+
+	$0
+\\end{consequence}
 endsnippet
 
 snippet exmp "Example" bA
-\\begin{example}
+\\begin{example} \thmslashn
+
 	$0
 \\end{example}
 endsnippet
 
-snippet prbl "Problem" bA
-\\begin{problem}
+snippet props "Properties" bA
+\\begin{properties} \thmslashn
+
 	$0
-\\end{problem}
+\\end{properties}
+endsnippet
+
+snippet prop_ "Property" bA
+\\begin{property} \thmslashn
+
+	$0
+\\end{property}
+endsnippet
+
+snippet exerc "Exercise" bA
+\\begin{exerc} \thmslashn
+
+	$0
+\\end{exerc}
+endsnippet
+
+snippet proof "Proof" bA
+\\begin{proof} \thmslashn
+
+	$0
+\\end{proof}
 endsnippet
 
 context "math()"
