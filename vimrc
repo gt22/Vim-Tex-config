@@ -32,6 +32,7 @@ set shiftwidth=4
 set expandtab
 set autoread
 set nu
+set noswapfile
 set backspace=indent,eol,start
 :color darcula
 :hi! link Conceal texMath

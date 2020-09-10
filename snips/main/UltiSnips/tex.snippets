@@ -146,6 +146,11 @@ snippet bb "mathbb" wA
 endsnippet
 
 context "math()"
+snippet cal "mathcal" wA
+\\mathcal{$1}$0
+endsnippet
+
+context "math()"
 snippet iff "iff" Ai
 \iff
 endsnippet
@@ -280,6 +285,11 @@ snippet bmat "bmat" iA
 endsnippet
 
 context "math()"
+snippet vmat "vmat" iA
+\begin{vmatrix} $1 \end{vmatrix} $0
+endsnippet
+
+context "math()"
 snippet amat "augmented bmat" iA
 \begin{abmatrix}{$1} $2 \end{abmatrix} $0
 endsnippet
@@ -323,7 +333,7 @@ snippet conj "conjugate" iA
 endsnippet
 
 snippet sum "sum" w
-\sum\limits_{i=${1:1}}^{${2:\infty}}
+\sum\limits_{${1:i=1}}^{${2:\infty}}
 endsnippet
 
 snippet taylor "taylor" w
@@ -347,7 +357,7 @@ snippet part "d/dx" w
 endsnippet
 
 context "math()"
-snippet sq "\sqrt{}" iA
+snippet sq "\sqrt{}" iwA
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
 
@@ -494,7 +504,12 @@ endsnippet
 
 context "math()"
 snippet norm "norm" iA
-\|$1\|$0
+\norm{$1}$0
+endsnippet
+
+context "math()"
+snippet abs "abs" iA
+\abs{$1}$0
 endsnippet
 
 priority 100
@@ -611,12 +626,33 @@ endsnippet
 
 context "math()"
 snippet Inter "bigcap" iA
-\bigcap_{${1:i \in ${2: I}}} $0
+\bigcap\limits_{${1:i=1}}^{${2:\infty}} $0
 endsnippet
 
 context "math()"
 snippet Union "bigcup" iA
-\bigcup_{${1:i \in ${2: I}}} $0
+\bigcup\limits_{${1:i=1}}^{${2:\infty}} $0
+endsnippet
+
+context "math()"
+snippet isq "sqcap" iA
+\sqcap
+endsnippet
+
+
+context "math()"
+snippet usq "sqcap" iA
+\sqcup
+endsnippet
+
+context "math()"
+snippet Isq "bigsqcap" iA
+\bigsqcap\limits_{${1:i=1}}^{${2:\infty}} $0
+endsnippet
+
+context "math()"
+snippet Usq "bigsqcup" iA
+\bigsqcup\limits_{${1:i=1}}^{${2:\infty}} $0
 endsnippet
 
 context "math()"
@@ -684,12 +720,24 @@ endsnippet
 priority 10
 context "math()"
 snippet "bar" "bar" riA
-\overline{$1}$0
+\bar{$1}$0
 endsnippet
 
 priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
+\bar{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "line" "overline" riA
+\overline{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])line" "overline" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -835,5 +883,10 @@ snippet split "split" bA
 		$0
 	\\end{split}
 \\end{equation*}
+endsnippet
+
+context "math()"
+snippet lsub "logic substitution" wA
+\\underbrace{$1}_{$2} $0
 endsnippet
 # vim:ft=snippets
